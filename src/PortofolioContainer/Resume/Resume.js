@@ -123,7 +123,8 @@ const Resume = (props) => {
         />
         <div className="experience-description">
           <span className="resume-description-text">
-            Working as web developer and web design.
+            Working as web developer adn 
+            online instructor on udemy.
           </span>
         </div>
         <div className="experience-description">
@@ -211,7 +212,7 @@ const Resume = (props) => {
       >
         <img
           className="bullet-logo"
-          src={require(`../../assets/Resume/${bullet.logoSrc}`)}
+          src={require(`../../assets/Resume/${bullet.logoSrc}`).default}
           alt="B"
         />
         <span className="bullet-label">{bullet.label}</span>
