@@ -93,6 +93,16 @@ export default function Testimonial(props) {
               <div className="col-lg-12">
                 <div className="testi-item">
                   <div className="testi-comment">
+                  <img src={search} alt="no internet connection"></img>
+                  </div>
+                  <div className="client-info">
+                    <h5>Search Repository</h5>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="testi-item">
+                  <div className="testi-comment">
                   <img src={network} alt="no internet connection"></img>
                   </div>
                   <div className="client-info">

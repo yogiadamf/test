@@ -12,6 +12,9 @@ export default function Profile() {
                         <a href='https://api.whatsapp.com/send/?phone=+6281515204215&text&app_absent=0'>
                             <i className='fa fa-whatsapp'></i>
                         </a>
+                        <a href='yogiadamf@gmail.com'>
+                            <i className='fa fa-envelope'></i>
+                        </a>
                         <a href='https://web.facebook.com/yogiadamf'>
                             <i className='fa fa-facebook-square'></i>
                         </a>
