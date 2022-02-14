@@ -48,6 +48,7 @@ const Resume = (props) => {
     { label: "Work History", logoSrc: "work-history.svg" },
     { label: "Programming Skills", logoSrc: "programming-skills.svg" },
     { label: "Projects", logoSrc: "projects.svg" },
+    { label: "Certifications", logoSrc: "programming-skills.svg" },
     { label: "Interests", logoSrc: "interests.svg" },
   ];
 
@@ -88,6 +89,33 @@ const Resume = (props) => {
         "Technologies Used: Cisco Packet Tracer",
     },
   ];
+  const certificationDetails = [
+    {
+      title: "Microsoft Azure Data Fundamentals",
+      duration: { fromDate: "09-Nov", toDate: "2021" },
+      description:
+        "Has successfully completed the requirements to be recognized as a Microsoft Certified: Azure Data Fundamentals.",
+    },
+    {
+      title: "Cisco Netowrking Essentials",
+      duration: { fromDate: "26-Agu", toDate: "2021" },
+      description:
+        "The student has successfully achieved student level credential for completing Networking Essentials course administered by the undersigned instructor.",
+    },
+    {
+      title: "Cisco IT Essentials",
+      duration: { fromDate: "16-Sep", toDate: "2021" },
+      description:
+        "The student has successfully achieved student level credential for completing Networking Essentials course administered by the undersigned instructor.",
+    },
+    {
+      title: "Cisco Cybersecurity Essentials",
+      duration: { fromDate: "24-Jul", toDate: "2021" },
+      description:
+        "For completing the Cisco Networking Academy® Cybersecurity Essentials course,",
+    },
+  ];
+
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
@@ -177,6 +205,19 @@ const Resume = (props) => {
       ))}
     </div>,
 
+    <div className="resume-screen-container" key="certifications">
+      {certificationDetails.map((certificationDetails, index) => (
+        <ResumeHeading
+          key={index}
+          heading={certificationDetails.title}
+          description={certificationDetails.description}
+          fromDate={certificationDetails.duration.fromDate}
+          toDate={certificationDetails.duration.toDate}
+        />
+      ))}
+    </div>,
+
+
     /* Interests */
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
@@ -188,6 +229,9 @@ const Resume = (props) => {
         description="I like to challenge my reflexes a lot while competing in football games, pushing the rank and having interactive gaming sessions excites me the most."
       />
     </div>,
+
+
+    
   ];
 
   const handleCarousal = (index) => {
