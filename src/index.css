@@ -81,7 +81,7 @@ body ::-webkit-scrollbar-thumb {
   background: hsla(0, 0%, 100%, 0.1);
 }
 
-.btn {
+.button {
   border-radius: 50px;
   padding: 14px 0;
   width: 160px;
@@ -90,36 +90,36 @@ body ::-webkit-scrollbar-thumb {
   font-family: "Poppins SemiBold";
 }
 
-.btn:active {
+.button:active {
   transform: translateY(2px);
 }
 
-.primary-btn {
+.primary-button {
   color: var(--white);
   border: 2px solid linen;
   font-size: 12px;
   background-color: #1f2235;
 }
 /* @media only screen and (max-width: 414px) {
-  .primary-btn {
+  .primary-button {
     font-size: 13px;
   }
 } */
 
-.primary-btn:hover {
+.primary-button:hover {
   color: aliceblue;
   border: 2px solid #ff5823;
   background-color: #1f2235;
 }
 
-.highlighted-btn {
+.highlighted-button {
   color: var(--white);
 
   font-size: 12px;
   background-color: #ff5823;
 }
 @media only screen and (max-width: 568px) {
-  .highlighted-btn {
+  .highlighted-button {
     z-index: -900;
   }
 }

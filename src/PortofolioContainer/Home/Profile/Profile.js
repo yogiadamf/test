@@ -61,12 +61,12 @@ export default function Profile() {
                     </div>
                     <div className='profile-options'>
                         <a href='https://api.whatsapp.com/send/?phone=+6281515204215&text&app_absent=0'>
-                        <button className='btn primary-btn'>
+                        <button className='button primary-button'>
                             Hire Me
                         </button>
                         </a>
                         <a href='cv.pdf' download='Yogi cv.pdf'>
-                            <button className='btn highlighted-btn'>Get Resume</button>
+                            <button className='button highlighted-button'>Get Resume</button>
                         </a>
                     </div>
                 </div>

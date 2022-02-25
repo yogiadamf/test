@@ -1,19 +1,11 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animation";
+import Slider from "react-slick";
+import {Card} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Testimonials.css";
-import sloorin from "../../../src/img/Testimonial/sloorin.png";
-import network from "../../../src/img/Testimonial/net.png";
-import sign from "../../../src/img/Testimonial/sign.png";
-import search from "../../../src/img/Testimonial/search.png";
-import cita from "../../../src/img/Testimonial/cita.png";
-import shape from "../../../src/img/Testimonial/shape-bg.png";
 
 export default function Testimonial(props) {
   let fadeInScreenHandler = (screen) => {
@@ -24,27 +16,40 @@ export default function Testimonial(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-  const options = {
-    loop: true,
-    margin: 0,
-    nav: true,
-    animateIn: "bounceInRight",
-    animateOut: "bounceOutRight",
-    dots: true,
-    autoplay: true,
-    smartSpeed: 1000,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 1,
-      },
-      1000: {
-        items: 3,
-      },
-    },
-  };
+    var settings = {
+      dots: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
 
   return (
     <div>
@@ -55,70 +60,91 @@ export default function Testimonial(props) {
       <section className="testimonial-section fade-in" id={props.id || ""}>
         <div className="container">
           <div className="row">
-            <OwlCarousel
-              className="owl-carousel"
-              id="testimonial-carousel"
-              {...options}
-            >
-              <div className="col-lg-12">
-                <div className="testi-item">
-                  <div className="testi-comment">
-                  <img src={sloorin} alt="no internet connection"></img>
-                  </div>
-                  <div className="client-info">
-                    <h5>Web Reservations</h5>
-                    <p>Caffe Sloor.in</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="testi-item">
-                  <div className="testi-comment">
-                  <img src={cita} alt="no internet connection"></img>
-                  </div>
-                  <div className="client-info">
-                    <h5>App Cita-Citaku</h5>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="testi-item">
-                  <div className="testi-comment">
-                  <img src={sign} alt="no internet connection"></img>
-                  </div>
-                  <div className="client-info">
-                    <h5>Traffic Sign Classification</h5>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="testi-item">
-                  <div className="testi-comment">
-                  <img src={search} alt="no internet connection"></img>
-                  </div>
-                  <div className="client-info">
-                    <h5>Search Repository</h5>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="testi-item">
-                  <div className="testi-comment">
-                  <img src={network} alt="no internet connection"></img>
-                  </div>
-                  <div className="client-info">
-                    <h5>Network Design</h5>
-                    <p>CV. Barokah ZA</p>
-                  </div>
-                </div>
-              </div>
-            </OwlCarousel>
+          <Slider {...settings}>
+          <div>
+              <Card style={{ width: "20rem" }}>
+                <Card.Img variant="top" src="./image/beras.png" />
+                <Card.Body>
+                  <Card.Title>Web Forecasting Rice Price</Card.Title>
+                  <Card.Text>
+                  Forecasting rice prices in western Indonesia using a panel data regression approach
+                  </Card.Text>
+                  <a href="https://peramalanhargaberas.my.id/">
+                  <button className='button highlighted-button'>Details</button>
+                  </a>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card style={{ width: "20rem" }}>
+                <Card.Img variant="top" src="./image/sloorin.png" />
+                <Card.Body>
+                  <Card.Title>Web Reservations Sloor.in</Card.Title>
+                  <Card.Text>
+                  A place and food reservation website for cafe sloor.in in the Lamongan area. with laravel framework
+                  </Card.Text>
+                  <a href="https://github.com/yogiadamf/Reservasi-tempat-caffe-sloor.in">
+                  <button className='button highlighted-button' >Details</button ></a>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card style={{ width: "20rem" }}>
+                <Card.Img variant="top" src="./image/cita.png" />
+                <Card.Body>
+                  <Card.Title>App Cita-Citaku</Card.Title>
+                  <Card.Text>
+                  My ideals application is an application for the introduction of various kinds of ideals
+                  </Card.Text>
+                  <a href="https://github.com/yogiadamf/App-Cita-citaku">
+                  <button className='button highlighted-button' >Details</button></a>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card style={{ width: "20rem" }}>
+                <Card.Img variant="top" src="./image/search.png" />
+                <Card.Body>
+                  <Card.Title>Search Repository</Card.Title>
+                  <Card.Text>
+                  The thesis title search system using the boolean retrieval method with the python programming language
+                  </Card.Text>
+                  <a href="https://github.com/yogiadamf/Sistem-Temu-Kembali-Pencarian-Judul-Skripsi-dengan-Boolean-Retrieval">
+                  <button className='button highlighted-button'>Details</button></a>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card style={{ width: "20rem" }}>
+                <Card.Img variant="top" src="./image/sign.png" />
+                <Card.Body>
+                  <Card.Title>Traffic Sign Classifications</Card.Title>
+                  <Card.Text>
+                  Implementation of deep learning in traffic sign classification with python programming language
+                  </Card.Text>
+                  <a href="https://github.com/yogiadamf/Klasisfikasi-Rambu-Lalu-Lintas-dengan-deep-Learning">
+                  <button className='button highlighted-button' >Details</button></a>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card style={{ width: "20rem" }}>
+                <Card.Img variant="top" src="./image/ui.png" />
+                <Card.Body>
+                  <Card.Title>Design UI & UX My UISI</Card.Title>
+                  <Card.Text>
+                  user interface and user experience design for My UISI application development
+                  </Card.Text>
+                  <a href="https://github.com/yogiadamf/Klasisfikasi-Rambu-Lalu-Lintas-dengan-deep-Learning">
+                  <button className='button highlighted-button' >Details</button></a>
+                </Card.Body>
+              </Card>
+            </div>
+        
+          </Slider>
           </div>
         </div>
       </section>
-      <div className="footer-image">
-        <img src={shape} alt="Phot0 not responding" />
-      </div>
     </div>
   );
 }

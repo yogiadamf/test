@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animation";
@@ -56,14 +56,14 @@ export default function AboutMe(props) {
             </div>
             <div className="about-me-options">
               <button
-                className="btn primary-btn"
+                className="button primary-button"
                 onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
               >
                 {" "}
                 Hire Me{" "}
               </button>
               <a href="cv.pdf" download="Yogi cv.pdf">
-                <button className="btn highlighted-btn">Get Resume</button>
+                <button className="button highlighted-button">Get Resume</button>
               </a>
             </div>
           </div>
